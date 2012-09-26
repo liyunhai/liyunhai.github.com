@@ -120,6 +120,19 @@ Ubuntu Server 12.04 LTS (ubuntu-12.04-server-amd64.iso)
 ### STREAMIO-FFMPEG安装
 	sudo gem install streamio-ffmpeg
 
+### 修改transcoder.rb以解决seek_time参数后置引起的性能问题
+	#command = "#{FFMPEG.ffmpeg_binary} -y -i #{Shellwords.escape(@movie.path)} #{@raw_options} #{Shellwords.escape(@output_file)}"
+	seek_time = @raw_options.delete(:seek_time)
+	seek_time = '-ss %d' % seek_time if seek_time
+	command = "#{FFMPEG.ffmpeg_binary} -y #{seek_time} -i #{Shellwords.escape(@movie.path)} #{@raw_options} #{Shellwords.escape(@output_file)}" 
+	
+
+### RMagick安装
+	sudo apt-get install imagemagick
+	sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev
+	sudo gem install rmagick
+
+
 ### ImageScience安装
 	sudo gem install image_science
 
