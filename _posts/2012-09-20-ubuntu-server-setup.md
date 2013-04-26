@@ -125,15 +125,32 @@ Ubuntu Server 12.04 LTS (ubuntu-12.04-server-amd64.iso)
 	seek_time = @raw_options.delete(:seek_time)
 	seek_time = '-ss %d' % seek_time if seek_time
 	command = "#{FFMPEG.ffmpeg_binary} -y #{seek_time} -i #{Shellwords.escape(@movie.path)} #{@raw_options} #{Shellwords.escape(@output_file)}" 
-	
 
 ### RMagick安装
 	sudo apt-get install imagemagick
 	sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev
 	sudo gem install rmagick
 
-
 ### ImageScience安装
 	sudo gem install image_science
+
+## Python(Django)环境安装与配置
+
+### 确认Python安装及版本
+	python -V
+
+### 安装pip
+	sudo apt-get install python-pip
+	sudo pip install -U pip
+
+### 安装Django
+	sudo pip install Django
+	
+### 安装MySQL For Python
+	sudo pin install -U distribute (Ubuntu12.04.2上的distribute版本不满足要求)
+	sudo apt-get install python-dev libmysqlclient-dev
+	sudo pip install MySQL-python	
+
+	
 
 
