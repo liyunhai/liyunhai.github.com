@@ -39,5 +39,12 @@ tags: [command line]
 	grant all privileges on *.* to 'root'@'192.168.1.100' identified by 'password' with grant option;
 	flush privileges;
 	
+### Mac上制作Ubuntu USB启动安装盘
+	$ hdiutil convert -format UDRW -o /path/to/generate/img/file /path/to/your/iso/file //将iso文件转换为img文件
+	$ diskutil list //查看USB的盘符
+	$ diskutil unmountDisk /dev/disk1 //卸载USB磁盘
+	$ sudo dd if=ubuntu.img.dmg of=/dev/rdisk1 bs=1m //将镜像写入USB
+	$ diskutil eject /dev/disk1 //弹出USB磁盘
+	
 	
 
