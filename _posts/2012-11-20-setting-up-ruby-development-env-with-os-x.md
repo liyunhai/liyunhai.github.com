@@ -15,6 +15,11 @@ tags: [os x, ruby, 配置]
 
 ## 安装最新版本Ruby
 	brew install ruby
+	
+## 安装Ruby调试工具
+	gem install pry
+	gem install pry-remote
+	gem install pry-nav
 
 ## 增加Ruby路径到$PATH环境变量
 	vi ~/.bash_profile
@@ -40,5 +45,6 @@ tags: [os x, ruby, 配置]
 	command = "#{FFMPEG.ffmpeg_binary} -y #{seek_time} -i #{Shellwords.escape(@movie.path)} #{@raw_options} #{Shellwords.escape(@output_file)}" 
 	
 ## RMagick安装
+	brew install ghostscript
 	brew install imagemagick
 	gem install rmagick
