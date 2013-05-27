@@ -46,5 +46,29 @@ tags: [command line]
 	$ sudo dd if=ubuntu.img.dmg of=/dev/rdisk1 bs=1m //将镜像写入USB
 	$ diskutil eject /dev/disk1 //弹出USB磁盘
 	
+### Ubuntu系统设定静态IP
+	sudo vi /etc/network/interfaces
+	//iface eth0 inet dhcp
+	# The primary network interface
+	iface eth0 inet static
+	address 192.168.1.10
+	netmask 255.255.255.0
+	gateway 192.168.1.1
+	
+	sudo vi /etc/resolv.conf //设置DNS
+	nameserver 202.96.134.133
+	nameserver 202.106.0.20
+	
+	sudo ifdown eth0
+	sudo ifup eth0
+	
+### Ubuntu系统修改主机名
+	sudo vi /etc/hosts
+	127.0.1.1 newhostname
+	
+	sudo vi /etc/hostname
+	newhostname
+	
+	hostname newhostname
 	
 
