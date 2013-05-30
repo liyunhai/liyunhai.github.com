@@ -9,6 +9,7 @@ tags: [command line]
 ## OS命令行
 	df -hT    //查询磁盘分区使用状况
 	du -hs ./Share    //查询目录占用磁盘空间
+	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user    //清除右键菜单重复项目
 
 ## Ruby(On Rails)命令行
 	rails new projectname    //创建一个新的rails项目
@@ -17,7 +18,7 @@ tags: [command line]
 	rails generate scaffold Vendor column:type
 	rake db:migrate RAILS_ENV=production
 
-## 其他命令行
+## GitHub命令行
 	rake post title="Hello World"    //Jekyll-Bootstrap中创建一个Post
 
 ## 疑难问题命令行
