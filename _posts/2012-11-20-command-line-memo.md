@@ -46,6 +46,12 @@ tags: [command line]
 	$ diskutil unmountDisk /dev/disk1 //卸载USB磁盘
 	$ sudo dd if=ubuntu.img.dmg of=/dev/rdisk1 bs=1m //将镜像写入USB
 	$ diskutil eject /dev/disk1 //弹出USB磁盘
+
+### Mac禁止生成.DS_Store
+	defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+	defaults write com.apple.desktopservices dsdontwritenetworkstores true
+	sudo  rm -fr  .ds_store
+	sudo find / -name '\.ds_store' -print -delete
 	
 ### Ubuntu系统设定静态IP
 	sudo vi /etc/network/interfaces
@@ -71,5 +77,8 @@ tags: [command line]
 	newhostname
 	
 	hostname newhostname
+
+### Ubuntu同步时间服务器
+	sudo ntpdate cn.pool.ntp.org //cn.pool.ntp.org是位于中国的公共NTP服务器，用来同步你的时间
 	
 

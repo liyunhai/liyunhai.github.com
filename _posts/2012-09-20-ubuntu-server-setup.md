@@ -81,6 +81,9 @@ Ubuntu Server 12.04 LTS (ubuntu-12.04-server-amd64.iso)
 	local_umask=022
 	idle_session_timeout=6000
 	pam_service_name=ftp (Ubuntu 12.04版本BUG)
+	
+	chroot_local_user=YES
+	allow_writeable_chroot=YES
 
 ### 服务启动
 	sudo service vsftpd restart
